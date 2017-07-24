@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="CustomRadio">
+        <attr name="radioColor" format="color" />
+        <attr name="radioShape" format="enum">
+            <enum name="simple_circle" value="1" />
+            <enum name="square" value="2" />
+            <enum name="star" value="3" />
+            <enum name="triangle" value="4" />
+            <enum name="heart" value="5" />
+            <enum name="rounded_ractangle" value="6" />
+            <enum name="rhombus1" value="7" />
+            <enum name="rhombus2" value="8" />
+            <enum name="simple_circle2" value="17" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomView">
+        <attr name="viewColor" format="color" />
+        <attr name="strokeWidth" format="integer" />
+        <attr name="viewShape" format="enum">
+            <enum name="simple_circle" value="1" />
+            <enum name="square" value="2" />
+            <enum name="star" value="3" />
+            <enum name="triangle" value="4" />
+            <enum name="heart" value="5" />
+            <enum name="rounded_ractangle" value="6" />
+            <enum name="rhombus1" value="7" />
+            <enum name="rhombus2" value="8" />
+            <enum name="square2" value="9" />
+            <enum name="star2" value="10" />
+            <enum name="triangle2" value="11" />
+            <enum name="heart2" value="12" />
+            <enum name="rounded_ractangle2" value="13" />
+            <enum name="rhombus3" value="14" />
+            <enum name="rhombus4" value="15" />
+            <enum name="simple_circle2" value="17" />
+            <enum name="ring" value="16" />
+
+        </attr>
+    </declare-styleable>
+</resources>

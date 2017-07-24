@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="background">#886666</color>
+    <!--<color name="tab_unselected_bg">#83c0e9</color>-->
+    <!--<color name="tab_unselected_text">#61a6db</color>-->
+    <color name="navy">#66ffffff</color>
+    <color name="tab_selected_bg">#ff3d00</color>
+
+    <color name="tab_unselected_bg">#ff9e7f</color>
+    <color name="tab_unselected_text">#f1f1f1</color>
+
+    <!--     <color name="list_tint_color">#9AFEFF</color> -->
+
+
+    <!--      <color name="pie_background">#02538B</color> -->
+    <!--     <color name="question_description">#004368</color> -->
+    <!--     <color name="question_example">#78d2f3</color> -->
+
+
+    <!--new color-->
+    <color name="colorPrimary">#00BBD3</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#9575CD</color>
+
+
+    <color name="gray">#E5E5E5</color>
+    <color name="new_gray">#B0BEC5</color>
+    <color name="light_gray">#FFDDDDDD</color>
+
+    <!--<color name="background">#EEEEEE</color>-->
+
+    <color name="transparent">#00000000</color>
+
+    <!-- Status para as lista -->
+    <color name="new_line_color">#b7b7b7</color>
+
+    <color name="green_dark">#669900</color>
+    <color name="darkerGray">#8d8d8d</color>
+    <color name="line_color">#a6a6a6</color>
+
+    <color name="navigation_text_bg">#f2f2f2</color>
+    <color name="navigation_child_text">#737373</color>
+
+    <!--new Color Pallet Colors-->
+    <color name="purple">#5700F1</color>
+    <color name="pink">#FF085C</color>
+    <color name="blue">#1597FF</color>
+    <color name="green">#00AB09</color>
+    <color name="orange">#FB8B00</color>
+    <color name="brown">#4E342E</color>
+    <color name="red">#FF3333</color>
+    <color name="dark_blue">#0025F4</color>
+
+    <color name="line_gray">#666666</color>
+    <color name="new_blue">#2196F3</color>
+    <color name="new_red">#f34e4a</color>
+    <color name="new_red2">#fb535a</color>
+    <color name="new_green">#0ba254</color>
+    <color name="new_date_color">#333333</color>
+
+    <color name="tab_host_unselected_bg_color">#b0bec5</color>
+    <color name="tab_host_selected_tab_color">#37474F</color>
+
+
+    <!--invoice additional colors-->
+    <color name="text_clr_comman_heading">#000000</color>
+    <color name="txt_clr_btn">#0C8CF2</color>
+    <color name="selector_clr_bg_btn_press">#F0F0F0</color>
+    <color name="selector_clr_bg_btn_normal">@android:color/transparent</color>
+    <color name="invoice_client_line">#c2c2c2</color>
+    <color name="calendar_green">#0bb95f</color>
+    <color name="invoice_text">#0080ff</color>
+    <color name="invoice_selected">#ececec</color>
+    <color name="invoice_price">#0099ff</color>
+
+    <!-- Start  InvoiceOverview-->
+
+    <color name="inv_overview_bg_clr_item">#FFFFFF</color>
+    <color name="inv_overview_bg_clr">#E5E5E5</color>
+    <color name="inv_overview_bg_clr_amount_block">#FFFFFF</color>
+    <color name="inv_overview_txt_clr_total_value">#2097F5</color>
+    <color name="inv_overview_txt_clr_comman_value">#000000</color>
+    <color name="inv_overview_txt_clr_paid_amt_value">#4DB24A</color>
+    <color name="inv_overview_txt_clr_balance_value">#F34E4A</color>
+    <color name="text_color">#444145</color>
+    <color name="btn_text_color_comman">#FFFFFF</color>
+    <color name="btn_press_comman_1">#9575CD</color>
+    <color name="btn_unpress_comman_1">#9575CD</color>
+    <color name="tax_color">#2554EC</color>
+
+
+    <!-- card colors -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+    <color name="card_detailing">#eee</color>
+    <color name="quick_invoice_button_color">#2196f3</color>
+    <color name="rbtn_text_color_false">#E5E5E5</color>
+    <color name="fb_blue">#3b5998</color>
+    <color name="fb_blue2">#8b9dc3</color>
+
+    <!-- End  InvoiceOverview-->
+</resources>

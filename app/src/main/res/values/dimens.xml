@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="activity_vertical_margin">16dp</dimen>-->
+
+    <!--new project-->
+
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="four_dp">4dp</dimen>
+    <dimen name="six_dp">4dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="fourteen_sp">14sp</dimen>
+    <dimen name="sixteen_sp">16sp</dimen>
+    <dimen name="eighteen_sp">18sp</dimen>
+
+    <dimen name="twenty_four_dp">24dp</dimen>
+    <dimen name="twenty_four_sp">24sp</dimen>
+    <dimen name="thirty_two_dp">32dp</dimen>
+    <dimen name="forty_dp">40dp</dimen>
+    <dimen name="fifty_six_dp">56dp</dimen>
+
+    <dimen name="circle_text_radius">40dp</dimen>
+
+    <!--newly added for invoice-->
+    <dimen name="dlg_invoice_list_dlg_width">250dp</dimen>
+    <dimen name="dlg_invoice_list_dlg_height">300dp</dimen>
+    <dimen name="dlg_invoice_list_dlg_inner_height">220dp</dimen>
+    <dimen name="dlg_invoice_list_dlg_info_text_size">15dp</dimen>
+    <dimen name="dlg_invoice_list_dlg_title_text_size">20dp</dimen>
+    <dimen name="twelve_sp">12sp</dimen>
+    <dimen name="two_dp">2dp</dimen>
+    <dimen name="twelve_dp">12dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
+    <dimen name="ten_sp">10sp</dimen>
+</resources>
