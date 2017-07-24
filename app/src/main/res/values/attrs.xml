@@ -17,7 +17,10 @@
 
     <declare-styleable name="CustomView">
         <attr name="viewColor" format="color" />
+        <attr name="bg_color" format="color" />
         <attr name="strokeWidth" format="integer" />
+        <attr name="star_points" format="integer"/>
+
         <attr name="viewShape" format="enum">
             <enum name="simple_circle" value="1" />
             <enum name="square" value="2" />
@@ -34,9 +37,10 @@
             <enum name="rounded_ractangle2" value="13" />
             <enum name="rhombus3" value="14" />
             <enum name="rhombus4" value="15" />
-            <enum name="simple_circle2" value="17" />
+            <enum name="rhombus5" value="19" />
             <enum name="ring" value="16" />
-
+            <enum name="simple_circle2" value="17" />
+            <enum name="star_filled" value="18" />
         </attr>
     </declare-styleable>
 </resources>

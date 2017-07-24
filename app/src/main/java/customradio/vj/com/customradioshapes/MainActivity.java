@@ -21,10 +21,9 @@ public class MainActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             radioButton = (CustomRadio) findViewById(i);
             radioButton.setChecked(true);
-            colorButton.setBackgroundColor(radioButton.getPieColor());
+            colorButton.setBackgroundColor(radioButton.getColor());
         }
     };
-    private RadioGroup myLL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +32,6 @@ public class MainActivity extends AppCompatActivity {
         radioGroup = (RadioGroup) findViewById(R.id.radio_grp1);
         radioGroup.setOnCheckedChangeListener(onCheckedChangeListener);
         colorButton = (Button) findViewById(R.id.color_button);
-
-        myLL = (RadioGroup) findViewById(R.id.my_ll);
-
-
-        RadioGroup.LayoutParams rlp = new RadioGroup.LayoutParams(40, 40);
-        rlp.setMargins(10,10,10,10);
-        CustomRadio radio;
-
-        for (int i = 0; i < 5; i++) {
-            radio = new CustomRadio(this, CustomView.SIMPLE_CIRCLE2);
-//            radio.setChecked(true);
-            radio.setPieColor(Color.RED);
-            radio.setLayoutParams(rlp);
-            myLL.addView(radio);
-        }
 
 
     }

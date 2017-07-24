@@ -12,6 +12,8 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
+import static java.lang.Math.min;
+
 /**
  * Created by Main on 7/6/2017.
  */
@@ -19,6 +21,7 @@ import android.view.View;
 public class CustomView extends View {
 
     public static final int SIMPLE_CIRCLE = 1;
+
     public static final int SIMPLE_CIRCLE2 = 17;
     public static final int SQUARE = 2;
     public static final int STAR = 3;
@@ -35,15 +38,17 @@ public class CustomView extends View {
     private static final int RHOMBUS3 = 14;
     private static final int RHOMBUS4 = 15;
     private static final int RING = 16;
+    private static final int STAR_FILLED = 18;
 
-
-    private final int color;
-    private final Path path;
+    private int color;
+    private int backgroundColor;
+    private Path path;
     private final int strokeWidth;
-    private Paint piePaint;
+    private Paint paintObject;
     private Bitmap icon;
     private int mWidth, mHeight;
     private int shape = SIMPLE_CIRCLE;
+    private int starPoints = 5;
 
     public CustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -51,23 +56,44 @@ public class CustomView extends View {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CustomView, 0, 0);
         try {
             color = ta.getColor(R.styleable.CustomView_viewColor, Color.RED);
+            backgroundColor = ta.getColor(R.styleable.CustomView_bg_color, Color.TRANSPARENT);
             shape = ta.getInteger(R.styleable.CustomView_viewShape, SIMPLE_CIRCLE);
             strokeWidth = ta.getInteger(R.styleable.CustomView_strokeWidth, 2);
+            starPoints = ta.getInteger(R.styleable.CustomView_star_points, 5);
+
         } finally {
             ta.recycle();
         }
 
+        initilizePaint();
 
-        piePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        piePaint.setAntiAlias(true);
-        piePaint.setDither(true);
-        piePaint.setStyle(Paint.Style.STROKE);
-        piePaint.setColor(Color.BLUE);
+    }
+
+
+    public CustomView(Context context, int shape) {
+        super(context);
+        this.shape = shape;
+        strokeWidth = 2;
+        initilizePaint();
+    }
+
+    public CustomView(Context context, int shape, int strokeWidth) {
+        super(context);
+        this.shape = shape;
+        this.strokeWidth = strokeWidth;
+        initilizePaint();
+    }
+
+    private void initilizePaint() {
+        paintObject = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintObject.setAntiAlias(true);
+        paintObject.setDither(true);
+        paintObject.setStyle(Paint.Style.STROKE);
+        paintObject.setColor(Color.BLUE);
 
         icon = BitmapFactory.decodeResource(getResources(), R.drawable.check);
         path = new Path();
     }
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -81,7 +107,7 @@ public class CustomView extends View {
     public static void drawTriangle(Canvas canvas, Paint paint, int x, int y, Path path, int width, int mHeight, int strokeWidth) {
         int halfWidth = width / 2;
         float mid = width / 2;
-        float min = Math.min(width, mHeight);
+        float min = min(width, mHeight);
         float fat = min / 17;
         float half = min / 2;
         float rad = half - fat;
@@ -129,7 +155,7 @@ public class CustomView extends View {
 
     public static void drawStar(Canvas canvas, Paint paint, Path path, int mWidth, int mHeight, int strokeWidth) {
         float mid = mWidth / 2;
-        float min = Math.min(mWidth, mHeight);
+        float min = min(mWidth, mHeight);
         float fat = min / 17;
         float half = min / 2;
         float rad = half - fat;
@@ -163,6 +189,37 @@ public class CustomView extends View {
     }
 
 
+    /**
+     * Below Method is Used From this blog
+     * http://android-er.blogspot.com/2014/05/draw-star-on-canvas.html
+     */
+    public static void setStar(Canvas canvas, Paint paintObject, Path path, float x, float y, float radius, float innerRadius, int numOfPt) {
+
+        double section = 2.0 * Math.PI / numOfPt;
+
+        path.reset();
+        path.moveTo(
+                (float) (x + radius * Math.cos(0)),
+                (float) (y + radius * Math.sin(0)));
+        path.lineTo(
+                (float) (x + innerRadius * Math.cos(0 + section / 2.0)),
+                (float) (y + innerRadius * Math.sin(0 + section / 2.0)));
+
+        for (int i = 1; i < numOfPt; i++) {
+            path.lineTo(
+                    (float) (x + radius * Math.cos(section * i)),
+                    (float) (y + radius * Math.sin(section * i)));
+            path.lineTo(
+                    (float) (x + innerRadius * Math.cos(section * i + section / 2.0)),
+                    (float) (y + innerRadius * Math.sin(section * i + section / 2.0)));
+        }
+
+        path.close();
+        canvas.drawPath(path, paintObject);
+
+    }
+
+
     public static void drawHeart(Canvas canvas, Paint paint, Path path, int mWidth, int mHeight) {
 
         // Starting point
@@ -188,7 +245,6 @@ public class CustomView extends View {
                 9 * (float) mWidth / 14, 0,
                 (float) mWidth / 2, (float) mHeight / 5);
 
-//        paint.setStyle(Paint.Style.FILL);
         canvas.drawPath(path, paint);
     }
 
@@ -200,143 +256,154 @@ public class CustomView extends View {
 
         switch (shape) {
             case SIMPLE_CIRCLE:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), paintObject);
                 break;
 
             case SIMPLE_CIRCLE2:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setStrokeWidth(3);
-                piePaint.setColor(Color.WHITE);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2) - 5, piePaint);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), paintObject);
+                paintObject.setStyle(Paint.Style.STROKE);
+                paintObject.setStrokeWidth(3);
+                paintObject.setColor(Color.WHITE);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2) - 5, paintObject);
                 break;
             case RING:
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
+                paintObject.setStyle(Paint.Style.STROKE);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), paintObject);
                 break;
             case SQUARE:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawPaint(piePaint);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawPaint(paintObject);
                 break;
             case STAR:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
-                piePaint.setColor(Color.WHITE);
-                piePaint.setStrokeWidth(strokeWidth);
-                piePaint.setStyle(Paint.Style.STROKE);
-                drawStar(canvas, piePaint, path, getWidth(), getHeight(), strokeWidth);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), paintObject);
+                paintObject.setColor(Color.WHITE);
+                paintObject.setStrokeWidth(strokeWidth);
+                paintObject.setStyle(Paint.Style.STROKE);
+                drawStar(canvas, paintObject, path, getWidth(), getHeight(), strokeWidth);
                 break;
             case TRIANGLE:
 
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
-                piePaint.setColor(Color.WHITE);
-                piePaint.setStrokeWidth(strokeWidth);
-                piePaint.setStyle(Paint.Style.STROKE);
-                drawTriangle(canvas, piePaint, getWidth() / 2, (getHeight() / 2) - 3, path, getWidth() - 30, getHeight(), strokeWidth);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), paintObject);
+                paintObject.setColor(Color.WHITE);
+                paintObject.setStrokeWidth(strokeWidth);
+                paintObject.setStyle(Paint.Style.STROKE);
+                drawTriangle(canvas, paintObject, getWidth() / 2, (getHeight() / 2) - 3, path, getWidth() - 30, getHeight(), strokeWidth);
                 break;
             case HEART:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), piePaint);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
 
-                piePaint.setColor(Color.WHITE);
-                piePaint.setStrokeWidth(strokeWidth);
-                piePaint.setStyle(Paint.Style.STROKE);
-                drawHeart(canvas, piePaint, path, getWidth(), getHeight());
+                paintObject.setColor(Color.WHITE);
+                paintObject.setStrokeWidth(strokeWidth);
+                paintObject.setStyle(Paint.Style.STROKE);
+                drawHeart(canvas, paintObject, path, getWidth(), getHeight());
                 break;
             case ROUNDED_RECTANGLE:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                drawRoundRectangle(canvas, piePaint, getWidth(), getHeight());
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                drawRoundRectangle(canvas, paintObject, getWidth(), getHeight());
 
                 break;
 
             case RHOMBUS1:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
 
-                canvas.drawPaint(piePaint);
-                piePaint.setColor(Color.WHITE);
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setStrokeWidth(strokeWidth);
-                canvas.drawRect(3, 3, getWidth() - 3, getHeight() - 3, piePaint);
+                canvas.drawPaint(paintObject);
+                paintObject.setColor(Color.WHITE);
+                paintObject.setStyle(Paint.Style.STROKE);
+                paintObject.setStrokeWidth(strokeWidth);
+                canvas.drawRect(3, 3, getWidth() - 3, getHeight() - 3, paintObject);
 
-                piePaint.setStyle(Paint.Style.FILL);
-                drawRhombus(canvas, piePaint, getWidth() / 2, getHeight() / 2, getWidth() / 2);
+                paintObject.setStyle(Paint.Style.FILL);
+                drawRhombus(canvas, paintObject, getWidth() / 2, getHeight() / 2, getWidth() / 2);
                 break;
 
             case RHOMBUS2:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(color);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), piePaint);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
 
-                piePaint.setColor(Color.WHITE);
-                piePaint.setStrokeWidth(strokeWidth);
+                paintObject.setColor(Color.WHITE);
+                paintObject.setStrokeWidth(strokeWidth);
 
-                piePaint.setStyle(Paint.Style.STROKE);
-                drawRhombus(canvas, piePaint, getWidth() / 2, getHeight() / 2, getWidth());
+                paintObject.setStyle(Paint.Style.STROKE);
+                drawRhombus(canvas, paintObject, getWidth() / 2, getHeight() / 2, getWidth());
                 break;
 
             case SQUARE2:
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setColor(color);
-                canvas.drawPaint(piePaint);
+                paintObject.setStyle(Paint.Style.STROKE);
+                paintObject.setColor(color);
+                canvas.drawPaint(paintObject);
 
                 break;
             case STAR2:
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setColor(Color.WHITE);
-                piePaint.setColor(color);
-                drawStar(canvas, piePaint, path, getWidth(), getHeight(), strokeWidth);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(backgroundColor);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
+                paintObject.setColor(color);
+                drawStar(canvas, paintObject, path, getWidth(), getHeight(), strokeWidth);
                 break;
+
+            case STAR_FILLED:
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(color);
+                setStar(canvas, paintObject, path, getWidth() / 2, getHeight() / 2, getWidth() / 2, getWidth() / 6, starPoints);
+                break;
+
             case TRIANGLE2:
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setColor(Color.WHITE);
-                piePaint.setColor(color);
-                drawTriangle(canvas, piePaint, getWidth() / 2, (getHeight() / 2) - 3, path, getWidth() - 30, getHeight(), strokeWidth);
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(backgroundColor);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
+                paintObject.setColor(color);
+                drawTriangle(canvas, paintObject, getWidth() / 2, (getHeight() / 2) - 3, path, getWidth() - 30, getHeight(), strokeWidth);
 
                 break;
+
             case HEART2:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(Color.WHITE);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 2), piePaint);
-                piePaint.setColor(color);
-                drawHeart(canvas, piePaint, path, getWidth(), getHeight());
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(Color.WHITE);
+                paintObject.setColor(color);
+                drawHeart(canvas, paintObject, path, getWidth(), getHeight());
                 break;
+
             case ROUNDED_RECTANGLE2:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(Color.WHITE);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), piePaint);
-                piePaint.setColor(color);
-                drawRoundRectangle(canvas, piePaint, getWidth(), getHeight());
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(Color.WHITE);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
+                paintObject.setColor(color);
+                drawRoundRectangle(canvas, paintObject, getWidth(), getHeight());
                 break;
 
 
             case RHOMBUS3:
-                piePaint.setStyle(Paint.Style.STROKE);
-                piePaint.setStrokeWidth(strokeWidth);
-                piePaint.setColor(color);
-                canvas.drawPaint(piePaint);
-                piePaint.setStyle(Paint.Style.FILL);
-                drawRhombus(canvas, piePaint, getWidth() / 2, getHeight() / 2, getWidth() / 2);
+                paintObject.setStyle(Paint.Style.STROKE);
+                paintObject.setStrokeWidth(strokeWidth);
+                paintObject.setColor(color);
+                canvas.drawPaint(paintObject);
+                paintObject.setStyle(Paint.Style.FILL);
+                drawRhombus(canvas, paintObject, getWidth() / 2, getHeight() / 2, getWidth() / 2);
                 break;
 
             case RHOMBUS4:
-                piePaint.setStyle(Paint.Style.FILL);
-                piePaint.setColor(Color.WHITE);
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), piePaint);
-                piePaint.setColor(color);
-                drawRhombus(canvas, piePaint, getWidth() / 2, getHeight() / 2, getWidth());
+                paintObject.setStyle(Paint.Style.FILL);
+                paintObject.setColor(backgroundColor);
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, (float) (getWidth() / 1.5), paintObject);
+                paintObject.setColor(color);
+                drawRhombus(canvas, paintObject, getWidth() / 2, getHeight() / 2, getWidth());
                 break;
+
         }
     }
 }

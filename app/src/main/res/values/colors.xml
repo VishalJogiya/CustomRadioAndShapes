@@ -101,6 +101,7 @@
     <color name="rbtn_text_color_false">#E5E5E5</color>
     <color name="fb_blue">#3b5998</color>
     <color name="fb_blue2">#8b9dc3</color>
+    <color name="yellow">#FFFF00</color>
 
     <!-- End  InvoiceOverview-->
 </resources>
