@@ -57,7 +57,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="#AA00FF"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="simple_circle2" />
 
 
                 <customradio.vj.com.library.CustomRadio
@@ -69,7 +69,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/green"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="rhombus1" />
 
                 <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio3"
@@ -80,7 +80,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/blue"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="rhombus2" />
 
 
                 <customradio.vj.com.library.CustomRadio
@@ -92,7 +92,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/purple"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="rounded_ractangle" />
 
                 <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio5"
@@ -102,8 +102,8 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    custom:radioColor="@color/orange"
-                    custom:radioShape="simple_circle" />
+                    custom:radioColor="@color/red"
+                    custom:radioShape="heart" />
 
                 <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio6"
@@ -114,7 +114,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/background"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="triangle" />
 
                 <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio7"
@@ -125,7 +125,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/colorPrimaryDark"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="star" />
 
                 <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio8"
@@ -136,7 +136,7 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     custom:radioColor="@color/black"
-                    custom:radioShape="simple_circle" />
+                    custom:radioShape="square" />
 
 
             </RadioGroup>

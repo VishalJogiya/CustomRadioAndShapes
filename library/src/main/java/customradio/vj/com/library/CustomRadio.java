@@ -170,10 +170,11 @@ public class CustomRadio extends android.support.v7.widget.AppCompatRadioButton 
                     paintObject.setColor(Color.WHITE);
                     paintObject.setStyle(Paint.Style.STROKE);
                     paintObject.setStrokeWidth(strokeWidth);
-                    canvas.drawRect(3, 3, 45, 45, paintObject);
+                    canvas.drawRect(3, 3, getWidth() - 3, getHeight()-3, paintObject);
 
                     paintObject.setStyle(Paint.Style.FILL);
                     drawRhombus(canvas, paintObject, getWidth() / 2, getHeight() / 2, getWidth() / 2);
+
                     break;
 
                 case RHOMBUS2:
