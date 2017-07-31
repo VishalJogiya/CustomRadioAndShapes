@@ -16,6 +16,9 @@
     </declare-styleable>
 
     <declare-styleable name="CustomView">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="integer" />
         <attr name="viewColor" format="color" />
         <attr name="bg_color" format="color" />
         <attr name="strokeWidth" format="integer" />

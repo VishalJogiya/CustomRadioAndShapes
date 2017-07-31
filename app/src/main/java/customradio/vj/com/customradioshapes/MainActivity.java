@@ -1,14 +1,11 @@
 package customradio.vj.com.customradioshapes;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
+
+import customradio.vj.com.library.CustomRadio;
 
 public class MainActivity extends AppCompatActivity {
 

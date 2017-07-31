@@ -1,4 +1,4 @@
-package customradio.vj.com.customradioshapes;
+package customradio.vj.com.library;
 
 
 import android.content.Context;
@@ -12,20 +12,20 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
-import static customradio.vj.com.customradioshapes.CustomView.HEART;
-import static customradio.vj.com.customradioshapes.CustomView.RHOMBUS1;
-import static customradio.vj.com.customradioshapes.CustomView.RHOMBUS2;
-import static customradio.vj.com.customradioshapes.CustomView.ROUNDED_RECTANGLE;
-import static customradio.vj.com.customradioshapes.CustomView.SIMPLE_CIRCLE;
-import static customradio.vj.com.customradioshapes.CustomView.SIMPLE_CIRCLE2;
-import static customradio.vj.com.customradioshapes.CustomView.SQUARE;
-import static customradio.vj.com.customradioshapes.CustomView.STAR;
-import static customradio.vj.com.customradioshapes.CustomView.TRIANGLE;
-import static customradio.vj.com.customradioshapes.CustomView.drawHeart;
-import static customradio.vj.com.customradioshapes.CustomView.drawRhombus;
-import static customradio.vj.com.customradioshapes.CustomView.drawRoundRectangle;
-import static customradio.vj.com.customradioshapes.CustomView.drawStar;
-import static customradio.vj.com.customradioshapes.CustomView.drawTriangle;
+import static customradio.vj.com.library.CustomView.HEART;
+import static customradio.vj.com.library.CustomView.RHOMBUS1;
+import static customradio.vj.com.library.CustomView.RHOMBUS2;
+import static customradio.vj.com.library.CustomView.ROUNDED_RECTANGLE;
+import static customradio.vj.com.library.CustomView.SIMPLE_CIRCLE;
+import static customradio.vj.com.library.CustomView.SIMPLE_CIRCLE2;
+import static customradio.vj.com.library.CustomView.SQUARE;
+import static customradio.vj.com.library.CustomView.STAR;
+import static customradio.vj.com.library.CustomView.TRIANGLE;
+import static customradio.vj.com.library.CustomView.drawHeart;
+import static customradio.vj.com.library.CustomView.drawRhombus;
+import static customradio.vj.com.library.CustomView.drawRoundRectangle;
+import static customradio.vj.com.library.CustomView.drawStar;
+import static customradio.vj.com.library.CustomView.drawTriangle;
 
 public class CustomRadio extends android.support.v7.widget.AppCompatRadioButton {
 

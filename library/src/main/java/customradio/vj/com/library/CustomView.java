@@ -1,4 +1,5 @@
-package customradio.vj.com.customradioshapes;
+package customradio.vj.com.library;
+
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -39,8 +40,10 @@ public class CustomView extends View {
     private static final int RHOMBUS4 = 15;
     private static final int RING = 16;
     private static final int STAR_FILLED = 18;
-
     private int color;
+
+    private int textSize = 18;
+    private int textColor;
     private int backgroundColor;
     private Path path;
     private final int strokeWidth;
@@ -49,13 +52,17 @@ public class CustomView extends View {
     private int mWidth, mHeight;
     private int shape = SIMPLE_CIRCLE;
     private int starPoints = 5;
+    private String lable;
 
     public CustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CustomView, 0, 0);
         try {
+            lable = ta.getString(R.styleable.CustomView_text);
             color = ta.getColor(R.styleable.CustomView_viewColor, Color.RED);
+            textColor = ta.getColor(R.styleable.CustomView_textColor, Color.BLACK);
+            textSize = ta.getInteger(R.styleable.CustomView_textSize, 18);
             backgroundColor = ta.getColor(R.styleable.CustomView_bg_color, Color.TRANSPARENT);
             shape = ta.getInteger(R.styleable.CustomView_viewShape, SIMPLE_CIRCLE);
             strokeWidth = ta.getInteger(R.styleable.CustomView_strokeWidth, 2);
@@ -405,5 +412,9 @@ public class CustomView extends View {
                 break;
 
         }
+        paintObject.setColor(textColor);
+        paintObject.setTextSize(18);
+        if (lable != null)
+            canvas.drawText(lable, (float) (getWidth() / 2.5), (float) (getHeight() / 2.5), paintObject);
     }
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +35,8 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio1"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -43,10 +45,10 @@
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
                     android:checked="true"
-                    app:radioColor="@color/red"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/red"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio9"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -54,11 +56,11 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="#AA00FF"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="#AA00FF"
+                    custom:radioShape="simple_circle" />
 
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio2"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -66,10 +68,10 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/green"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/green"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio3"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -77,11 +79,11 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/blue"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/blue"
+                    custom:radioShape="simple_circle" />
 
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio4"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -89,10 +91,10 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/purple"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/purple"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio5"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -100,10 +102,10 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/orange"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/orange"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio6"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -111,10 +113,10 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/background"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/background"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio7"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -122,10 +124,10 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/colorPrimaryDark"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/colorPrimaryDark"
+                    custom:radioShape="simple_circle" />
 
-                <customradio.vj.com.customradioshapes.CustomRadio
+                <customradio.vj.com.library.CustomRadio
                     android:id="@+id/radio8"
                     android:layout_width="@dimen/thirty_two_dp"
                     android:layout_height="@dimen/thirty_two_dp"
@@ -133,8 +135,8 @@
                     android:layout_marginLeft="@dimen/sixteen_dp"
                     android:layout_marginRight="@dimen/sixteen_dp"
                     android:layout_marginTop="@dimen/eight_dp"
-                    app:radioColor="@color/black"
-                    app:radioShape="simple_circle" />
+                    custom:radioColor="@color/black"
+                    custom:radioShape="simple_circle" />
 
 
             </RadioGroup>
@@ -167,139 +169,142 @@
             tools:targetApi="ice_cream_sandwich">
 
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/black"
-                app:viewShape="square2" />
+                custom:viewColor="@color/black"
+                custom:viewShape="square2" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/tab_unselected_bg"
-                app:viewShape="square" />
+                custom:viewColor="@color/tab_unselected_bg"
+                custom:viewShape="square" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/green"
-                app:viewShape="rounded_ractangle" />
+                custom:viewColor="@color/green"
+                custom:viewShape="rounded_ractangle" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
+                android:layout_width="@dimen/fifty_six_dp"
+                android:layout_height="@dimen/fifty_six_dp"
+                custom:text="sagsfg"
+                android:layout_margin="@dimen/sixteen_dp"
+                custom:viewColor="@color/yellow"
+                custom:textSize="25"
+                custom:viewShape="rounded_ractangle2" />
+
+
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/yellow"
-                app:viewShape="rounded_ractangle2" />
+                custom:viewColor="@color/green"
+                custom:viewShape="simple_circle2" />
 
-
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/green"
-                app:viewShape="simple_circle2" />
+                custom:viewColor="@color/pink"
+                custom:viewShape="simple_circle" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/pink"
-                app:viewShape="simple_circle" />
+                custom:viewColor="@color/black"
+                custom:viewShape="star" />
 
-
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/black"
-                app:viewShape="star" />
+                custom:strokeWidth="5"
+                custom:viewColor="@color/red"
+                custom:viewShape="star2" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:strokeWidth="5"
-                app:viewColor="@color/red"
-                app:viewShape="star2" />
+                custom:viewColor="@color/tax_color"
+                custom:viewShape="triangle" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/tax_color"
-                app:viewShape="triangle" />
+                custom:star_points="5"
+                custom:bg_color="@color/line_color"
+                custom:viewColor="#FFD600"
+                custom:viewShape="star_filled" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:star_points="5"
-                app:bg_color="@color/line_color"
-                app:viewColor="#FFD600"
-                app:viewShape="star_filled" />
+                custom:viewColor="@color/tab_selected_bg"
+                custom:viewShape="triangle2"
+                custom:bg_color="@color/line_color"/>
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/tab_selected_bg"
-                app:viewShape="triangle2"
-                app:bg_color="@color/line_color"/>
+                custom:viewColor="@color/purple"
+                custom:viewShape="heart" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/purple"
-                app:viewShape="heart" />
+                custom:viewColor="@color/red"
+                custom:viewShape="heart2" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/red"
-                app:viewShape="heart2" />
+                custom:viewColor="#00897B"
+                custom:viewShape="rhombus1" />
 
-
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="#00897B"
-                app:viewShape="rhombus1" />
+                custom:viewColor="#FF9800"
+                custom:viewShape="rhombus2" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="#FF9800"
-                app:viewShape="rhombus2" />
+                custom:viewColor="@color/green"
+                custom:viewShape="rhombus3" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="@color/green"
-                app:viewShape="rhombus3" />
-
-            <customradio.vj.com.customradioshapes.CustomView
-                android:layout_width="@dimen/fifty_six_dp"
-                android:layout_height="@dimen/fifty_six_dp"
-                android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="#FF5722"
+                custom:viewColor="#FF5722"
                 android:background="@color/pink"
-                app:viewShape="rhombus4" />
+                custom:viewShape="rhombus4" />
 
-            <customradio.vj.com.customradioshapes.CustomView
+            <customradio.vj.com.library.CustomView
                 android:layout_width="@dimen/fifty_six_dp"
                 android:layout_height="@dimen/fifty_six_dp"
                 android:layout_margin="@dimen/sixteen_dp"
-                app:viewColor="#3E2723"
-                app:viewShape="ring" />
+                custom:viewColor="#3E2723"
+                custom:viewShape="ring" />
 
         </GridLayout>
 
