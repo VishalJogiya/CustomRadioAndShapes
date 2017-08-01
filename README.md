@@ -9,7 +9,7 @@ Square, Circle, Ract, Heart, starts, Rhombus, etc.
 
 
 
-Useage For Radio
+Useage For Radio and Custom Views
 ```
 <customradio.vj.com.library.CustomRadio
       android:id="@+id/radio9"
@@ -21,11 +21,8 @@ Useage For Radio
       android:layout_marginTop="@dimen/eight_dp"
       custom:radioColor="#AA00FF"
       custom:radioShape="simple_circle2" />
-      ```
-
-Useage For Custom Views
-
-```android
+ 
+ 
 <customradio.vj.com.library.CustomView
       android:layout_width="@dimen/fifty_six_dp"
       android:layout_height="@dimen/fifty_six_dp"
