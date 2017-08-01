@@ -1,16 +1,13 @@
 # CustomRadioAndShapes
-Created Custom lib with different Shapes and Views. 
-Can be Used to as a Color selector.
+Custom lib with different Shapes and Views. 
 
 This lib was started as a Color selector radio buttons but extended to Multiple shapes like 
 Square, Circle, Ract, Heart, starts, Rhombus, etc.
 
  
 
-
-
 Useage For Radio and Custom Views
-```
+```android
 <customradio.vj.com.library.CustomRadio
       android:id="@+id/radio9"
       android:layout_width="@dimen/thirty_two_dp"
