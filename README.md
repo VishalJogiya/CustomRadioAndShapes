@@ -1,6 +1,12 @@
 # CustomRadioAndShapes
 Custom lib with different Shapes and Views. 
 
+implementation: 
+1. Download release aar file from CustomRadioAndShapes/library folder
+2. In your Android Studio File-> New -> New Module -> Import .aar or .jar 
+3. Select aar file and SubProject Name as CustomRadioAndShapes. Done.
+
+ 
 This lib was started as a Color selector radio buttons but extended to Multiple shapes like 
 Square, Circle, Ract, Heart, starts, Rhombus, etc.
 
